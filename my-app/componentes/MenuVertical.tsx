@@ -1,5 +1,4 @@
-import MeuComponente from "@/componentes/MeuComponente";
-
+/*
 export default function MenuVertical() {
   return (
     <>
@@ -21,4 +20,28 @@ export default function MenuVertical() {
     </>
   );
 }
+*/
 
+import ItemMenu from "./ItemMenu";
+
+export default function MenuVertical() {
+  return (
+    <>
+    <div className="flex h-screen">
+      <header className="w-40 p-5 flex flex-col space-y-4 bg-violet-400 text-base">
+        <ItemMenu link="" texto="Menu" tipo="pagina-atual"/>
+        <ItemMenu link="" texto="Início" tipo="outra-pagina"/>
+        <ItemMenu link="" texto="Perfil" tipo="outra-pagina"/>
+        <ItemMenu link="" texto="Configurações" tipo="outra-pagina"/>
+        <ItemMenu link="" texto="Sair" tipo="outra-pagina"/>
+      </header>
+
+      <div className="p-5">
+        <h1 className="text-violet-600">Bem vindo!</h1>
+        <p>Esta é uma tela com um menu simples usando Tailwind CSS.</p>
+      </div>
+
+    </div>
+    </>
+  );
+}

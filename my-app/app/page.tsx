@@ -16,9 +16,12 @@ export default function Index() {
       <MeuComponente nome="Kethllen" idade={26}/>
       */}
 
-      <Button color="azul" titulo="Botão azul"/>
+      {/* <Button color="azul" titulo="Botão azul"/>
       <Button color="verde" titulo="Botão verde"/>
-      <Button color="vermelho" titulo="Botão vermelho"/>
+      <Button color="vermelho" titulo="Botão vermelho"/> */}
+
+      <TelaLogin/>
+
     </>
   );
 }

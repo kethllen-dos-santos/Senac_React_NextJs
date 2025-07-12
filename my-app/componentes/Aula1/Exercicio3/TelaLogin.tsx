@@ -25,8 +25,8 @@ export default function TelaLogin() {
 */
 
 
-import EntradaBotao from "./EntradaBotao";
-import EntradaTexto from "./EntradaTexto";
+import EntradaBotao from "../../EntradaBotao";
+import EntradaTexto from "../../EntradaTexto";
 
 export default function TelaLogin() {
   return (

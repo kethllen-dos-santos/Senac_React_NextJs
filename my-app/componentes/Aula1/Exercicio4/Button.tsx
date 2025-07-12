@@ -1,9 +1,10 @@
 type props = {
     color: "azul" | "verde" | "vermelho"
     titulo: string
+    funcao: () => void
 }
 
-export default function Button({color, titulo}:props) {
+export default function Button({color, titulo, funcao}:props) {
     let corBase = "";
     switch (color) {
         case "azul":
@@ -21,7 +22,12 @@ export default function Button({color, titulo}:props) {
     
     return (
     <>
-        <button className={`${corBase} p-3 rounded-lg cursor-pointer text-white`}>{titulo}</button>
+        <button
+            onClick={funcao}
+            className={`${corBase} p-3 rounded-lg cursor-pointer text-white`}
+        >
+        {titulo}
+        </button>
     </>
     );
 }

@@ -20,4 +20,3 @@ export default function ItemMenu({link, texto, tipo}: props) {
         </>
     );
 }
-

@@ -1,3 +1,5 @@
+/*
+
 "use client"
 
 import Button from "@/componentes/Aula1/Exercicio4/Button";
@@ -9,10 +11,11 @@ import MenuVertical from "@/componentes/Aula1/Exercicio2/MenuVertical";
 import MeuComponente from "@/componentes/MeuComponente";
 import TelaLogin from "@/componentes/Aula1/Exercicio3/TelaLogin";
 import AreaUsuario from "@/componentes/Aula2/Exercicio2/AreaUsuario";
+import Menu from "@/componentes/Aula2/Exercicio3/Menu";
+import Quadrante from "@/componentes/Aula2/Exercicio3/Quadrante";
+import { useState } from "react";
 
 
-
-/*
 function Componente({children}:{children: React.ReactNode}) {
   return (
     <>
@@ -24,17 +27,78 @@ function Componente({children}:{children: React.ReactNode}) {
 function teste() {
   console.log("Testezinho!")
 }
-*/
+
 
 function notificacao(){
   alert ("Essa é uma mensagem :)");
 }
 
 
+// LISTA
+function Compenente() {
+  const lista = [
+    {
+      id: 1,
+      nome: "Kethllen",
+      idade: 26,
+      endereco: {
+        rua: "rua amendoas",
+        numero: "33",
+        bairro: "DCE"
+      }
+    },
+    {
+      id: 2,
+      nome: "Aline",
+      idade: 19,
+      endereco: {
+        rua: "rua ABC",
+        numero: "22A",
+        bairro: "lilas"
+      }
+    }
+  ]
+
+  return (
+    <div>
+      {lista.map((item) => (
+        <div key={item.id}>
+          <h1 className="text-rose-500">{item.nome}</h1>
+          <p>{item.idade} {item.endereco.rua} {item.endereco.numero} {item.endereco.bairro}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+
+//IF TERNÁRIO
+
+condição ? verdadeiro : falso
+
+
+type usuario = {
+  nome: string
+  idade: number
+}
+
 export default function Index() {
+
+  //const estaLogado = true;
+  
+  const [contador, setContador] = useState(0)
+  function atualizarContador() {
+    setContador(contador + 2)
+  }
+
+  const [usuario, setUsuario] = useState<usuario>()
+
+  const [lista, setLista] = useState<boolean>() // true ou false
+  
+
   return (
     <>
-      {/*
+      {
       Aula 1
 
       <MenuHorizontal/>
@@ -44,9 +108,9 @@ export default function Index() {
       <Button color="azul" titulo="Botão azul"/>
       <Button color="verde" titulo="Botão verde"/>
       <Button color="vermelho" titulo="Botão vermelho" funcao={teste}/>
-      */}
+      }
 
-      {/*
+      {
       AULA 2
 
       <Componente>
@@ -64,8 +128,6 @@ export default function Index() {
 
       <Footer ano="2025" nome="Minha Empresa"/>
 
-      */}
-
         <AreaUsuario
           titulo="Área do Usuário"
           tituloBotao="Executar ação"
@@ -73,8 +135,47 @@ export default function Index() {
         >
         <p>Bem vindo ao sistema! Esse pedaço veio do children.</p>
         </AreaUsuario>
-          
+      
+      
+
+      <div className="flex h-screen">
+        <Menu corFundo="rosa"/>
+
+        <div>
+        <Quadrante titulo="Alice" conteudo="hanakalalalal"/>
+        </div>
+
+      </div>
+
+
+      <Compenente/>
+
+
+      {estaLogado ? <h1>Logado</h1> : <h1>Não está logado</h1>}
+
+      {contador} <br/>
+
+      <button className="bg-rose-400" onClick={atualizarContador}>Atualizar</button> <br/>
+      <button className="bg-violet-400" onClick={() => setContador(contador+1)}>Atualizar</button> <br/>
+
+    }
+
+    
 
     </>
   );
+}
+
+*/
+
+import UseStateExer1 from "@/componentes/Aula2/Exercicio4/1";
+
+export default function Index() {
+
+  return(
+    <>
+      <UseStateExer1/>
+    </>
+  );
+  
 }

@@ -168,13 +168,59 @@ export default function Index() {
 
 */
 
-import UseStateExer1 from "@/componentes/Aula2/Exercicio4/1";
+import Loja from "@/componentes/Aula3/Exercicio1/Loja";
 
-export default function Index() {
+
+// import { useState } from "react";
+// import UseStateExer1 from "@/componentes/Aula2/Exercicio4/UseStateExer1";
+// import UseStateExer2 from "@/componentes/Aula2/Exercicio4/UseStateExer2";
+// import UseStateExer3 from "@/componentes/Aula2/Exercicio4/UseStateExer3";
+// import UseStateExer4 from "@/componentes/Aula2/Exercicio4/UseStateExer4";
+// import UseStateExer6 from "@/componentes/Aula2/Exercicio4/UseStateExer6";
+// import UseStateExer5 from "@/componentes/Aula2/Exercicio4/UseStateExer5";
+
+// export default function Index() {
+
+//   return(
+//     <>
+//        <UseStateExer1/> 
+
+//       <UseStateExer2>
+//         <p>Este é um parágrafo.</p>
+//       </UseStateExer2>
+
+//       <UseStateExer3/>
+
+//       <UseStateExer4/>
+      
+//       <UseStateExer5/>
+
+//       <UseStateExer5/>
+//     </>
+//   );
+  
+// }
+
+
+
+// import Api from "@/componentes/Aula3/Api";
+
+// export default async function Index() {
+
+//   return(
+//     <>
+//       <Api/>
+//     </>
+//   );
+  
+// }
+
+
+export default async function Index() {
 
   return(
     <>
-      <UseStateExer1/>
+      <Loja/>
     </>
   );
   

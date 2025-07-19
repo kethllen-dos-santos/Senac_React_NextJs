@@ -1,21 +1,21 @@
 type props = {
     className ?: string
-    color: "azul" | "verde" | "vermelho"
+    cor: "azul" | "roxo" | "amarelo"
     titulo: string
     funcao: () => void
 }
 
-export default function Button({className, color, titulo, funcao}:props) {
+export default function Botao({className, cor, titulo, funcao}:props) {
     let corBase = "";
-    switch (color) {
+    switch (cor) {
         case "azul":
-            corBase="bg-blue-500"
+            corBase="bg-blue-600"
             break;
-        case "verde":
-            corBase="bg-green-500"
+        case "roxo":
+            corBase="bg-purple-600"
             break;
-        case "vermelho":
-            corBase="bg-red-500"
+        case "amarelo":
+            corBase="bg-amber-400"
             break;
         default:
             break;

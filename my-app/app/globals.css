@@ -5,11 +5,18 @@ body {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   /*background-color: #E5E7EB;*/
-  background-color: #E5E7EB;
+  background-color: #F3F4F6;
 }
 
 h1 {
   font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bolder;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.1rem;
   line-height: 2rem;
   font-weight: bolder;
   margin-bottom: 0.75rem;

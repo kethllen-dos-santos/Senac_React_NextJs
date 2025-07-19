@@ -19,7 +19,7 @@ export default function MenuHorizontal() {
 */
 
 
-import ItemMenu from "../../ItemMenu";
+import ItemMenu from "../ItemMenu";
 
 export default function MenuHorizontal() {
   return (

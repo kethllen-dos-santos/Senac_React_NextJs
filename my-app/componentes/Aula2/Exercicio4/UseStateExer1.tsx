@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function UseStateExer1() {
 
   const [contador, setContador] = useState(0)
+  
   function somar() {
     setContador(contador + 1)
   }

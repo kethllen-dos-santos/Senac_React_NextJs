@@ -168,7 +168,7 @@ export default function Index() {
 
 */
 
-import Loja from "@/componentes/Aula3/Exercicio1/Loja";
+
 
 
 // import { useState } from "react";
@@ -215,13 +215,16 @@ import Loja from "@/componentes/Aula3/Exercicio1/Loja";
   
 // }
 
+import PaginaInicial from "@/componentes/Aula4/PaginaInicial";
+import Loja from "@/componentes/Aula4/PaginaInicial";
 
 export default async function Index() {
 
   return(
     <>
-      <Loja/>
+      <PaginaInicial/>
     </>
   );
   
 }
+

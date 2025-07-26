@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Botao from "./Botao";
 import Card from "./Card";
 import Menu from "./Menu";
@@ -23,19 +24,19 @@ export default async function Loja() {
     return(
         <>
             <Menu>
-                <div className="flex flex-wrap gap-5">
+                <div className="flex flex-wrap gap-7">
                     {dados.map((item) => (
                         <div key={item.id}>
-                            <Card className="w-96 h-96">
+                            <Card className="w-96 h-full">
                                 <div className="flex justify-center">
                                     <img src={item.image} className="h-56"/>
                                 </div>
 
                                 <h3>{item.title}</h3>
-                                <p className="text-gray-400">{item.category}</p>
-                                <p className="text-emerald-500 font-bold">$ {item.price}</p>
-                                <p>{item.description}</p>
-                                <Botao cor="amarelo" titulo="Ver mais"/>
+                                <p className="text-gray-400 bord">{item.category}</p>
+                                <p className="text-emerald-500 font-bold mb-2">$ {item.price}</p>
+                                <p className=" mt-2 mb-3 line-clamp-3 flex-1">{item.description}</p>
+                                <Link href=""><Botao className="mt-auto" cor="azul" titulo="Ver mais"/></Link>
                             
                             </Card>
                         </div>

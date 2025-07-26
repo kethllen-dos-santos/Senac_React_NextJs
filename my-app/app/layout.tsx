@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ItemMenu from "@/componentes/Aula4/ItemMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+
+        <div className="flex">
+          <header className="p-10 pr-25 flex flex-col space-y-7 bg-gray-800 text-lg">
+            <ItemMenu link="/" texto="Catálogo" tipo="pagina-atual"/>
+            <ItemMenu link="" texto="Perfil" tipo="outra-pagina"/>
+            <ItemMenu link="" texto="Configurações" tipo="outra-pagina"/>
+            <ItemMenu link="" texto="Sair" tipo="outra-pagina"/>
+          </header>
+
+          <div className="w-full">
+            {children}
+          </div>
+
+        </div>
+
       </body>
     </html>
   );

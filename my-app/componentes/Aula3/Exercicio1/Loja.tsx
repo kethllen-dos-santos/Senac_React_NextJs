@@ -35,7 +35,7 @@ export default async function Loja() {
                                 <p className="text-gray-400">{item.category}</p>
                                 <p className="text-emerald-500 font-bold">$ {item.price}</p>
                                 <p>{item.description}</p>
-                                <Botao cor="amarelo" titulo="Ver mais" funcao={vazia}/>
+                                <Botao cor="amarelo" titulo="Ver mais"/>
                             
                             </Card>
                         </div>

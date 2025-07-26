@@ -1,11 +1,14 @@
+"use client"
+
 type props = {
     className ?: string
     cor: "azul" | "roxo" | "amarelo"
     titulo: string
-    funcao: () => void
 }
 
-export default function Botao({className, cor, titulo, funcao}:props) {
+function vazio() {}
+
+export default function Botao({className, cor, titulo}:props) {
     let corBase = "";
     switch (cor) {
         case "azul":
@@ -24,7 +27,7 @@ export default function Botao({className, cor, titulo, funcao}:props) {
     return (
     <>
         <button
-            onClick={funcao}
+            onClick={vazio}
             className={`${className} ${corBase} p-3 rounded-lg cursor-pointer text-white`}
         >
         {titulo}

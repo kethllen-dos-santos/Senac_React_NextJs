@@ -7,8 +7,8 @@ type props = {
 export default function Menu({children}: props) {
   return (
     <>
-    <div className="flex h-screen">
-      <header className="w-40 p-5 flex flex-col space-y-4 bg-gray-800 text-base">
+    <div className="flex h-screen w-screen">
+      <header className="w-1/2 p-5 flex flex-col space-y-4 bg-gray-800 text-base">
         <ItemMenu link="" texto="Menu" tipo="pagina-atual"/>
         <ItemMenu link="" texto="Início" tipo="outra-pagina"/>
         <ItemMenu link="" texto="Perfil" tipo="outra-pagina"/>

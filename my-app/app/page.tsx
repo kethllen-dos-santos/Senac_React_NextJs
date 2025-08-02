@@ -170,7 +170,6 @@ export default function Index() {
 
 
 
-
 // import { useState } from "react";
 // import UseStateExer1 from "@/componentes/Aula2/Exercicio4/UseStateExer1";
 // import UseStateExer2 from "@/componentes/Aula2/Exercicio4/UseStateExer2";
@@ -215,16 +214,32 @@ export default function Index() {
   
 // }
 
-import PaginaInicial from "@/componentes/Aula4/PaginaInicial";
-import Loja from "@/componentes/Aula4/PaginaInicial";
+// import PaginaInicial from "@/componentes/Aula4/PaginaInicial";
+// import Loja from "@/componentes/Aula4/PaginaInicial";
+
+// export default async function Index() {
+
+//   return(
+//     <>
+//       <PaginaInicial/>
+//     </>
+//   );
+  
+// }
+
+import Botao from "@/componentes/Aula5/Botao";
+import Users from "@/componentes/Aula5/Users";
+import Link from "next/link";
 
 export default async function Index() {
 
   return(
-    <>
-      <PaginaInicial/>
-    </>
+    <div className="bg-violet-300 p-5 h-full">
+      <Link href="/cadastro"><Botao className="w-40 mb-5 border-1 border-black" cor="roxo" titulo="Cadastrar"/></Link>
+
+      <Users/>
+
+    </div>
   );
   
 }
-

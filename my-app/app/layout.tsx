@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ItemMenu from "@/componentes/Aula4/ItemMenu";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
+        
+        {/* AULA 4
+        
         <div className="flex">
           <header className="p-10 pr-25 flex flex-col space-y-7 bg-gray-800 text-lg">
             <ItemMenu link="/" texto="Catálogo" tipo="pagina-atual"/>
@@ -41,7 +44,17 @@ export default function RootLayout({
             {children}
           </div>
 
+        </div> */}
+        <div>
+          <Link href="/" className="cursor-pointer">
+            <h1 className="bg-gray-900 text-white p-5">Menu Inicial</h1>
+          </Link>
         </div>
+
+        <div className="bg-violet-300 p-5 h-screen">
+          {children}
+        </div>
+        
 
       </body>
     </html>

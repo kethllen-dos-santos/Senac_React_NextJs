@@ -31,3 +31,12 @@ export async function POST(request: Request) {
         headers: {'Content-Type': 'application/json'}
     });
 }
+
+
+export async function PUT(request: Request, {params}: {params: {id: string}}) {
+    const {id, name, email} = await request.json()
+
+    await banco.query("UPDATE users SET name=?, email=? WHERE id=?", [name, email, id])
+
+    return new Response(JSON.stringify({valor: true}))
+}

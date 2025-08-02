@@ -8,9 +8,9 @@ export default async function EditarUsuario ({params}: {params: Promise<{id: str
     
 
     return (
-        <div>
+        <div className="h-screen">
             <h1>Editar Usuário</h1>
-            <Formulario/>
+            <Formulario id={dados.id} name={dados.name} email={dados.email}/>
         </div>
         
     );

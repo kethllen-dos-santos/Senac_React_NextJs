@@ -227,18 +227,15 @@ export default function Index() {
   
 // }
 
-import Botao from "@/componentes/Aula5/Botao";
+
 import Users from "@/componentes/Aula5/Users";
 import Link from "next/link";
 
 export default async function Index() {
 
   return(
-    <div className="bg-violet-300 p-5 h-full">
-      <Link href="/cadastro"><Botao className="w-40 mb-5 border-1 border-black" cor="roxo" titulo="Cadastrar"/></Link>
-
+    <div>
       <Users/>
-
     </div>
   );
   

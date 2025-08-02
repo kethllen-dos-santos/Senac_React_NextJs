@@ -3,20 +3,24 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function Formulario() {
+export default function Formulario({id, name="", email=""}: userProps) {
 
-    const [nome, setNome] = useState("")
-    const [email, setEmail] = useState("")
+    const [userId, setUserId] = useState<number | undefined>(id)
+    const [userName, setUserName] = useState(name)
+    const [userEmail, setEmail] = useState(email)
     const rota = useRouter();
 
     async function Salvar() {
         const formulario = {
-            name: nome,
-            email: email
+            id: userId,
+            name: userName,
+            email: userEmail
         }
 
+        const metodo = userId ? "PUT" : "POST"
+
         const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/api/users` ,{
-            method: "POST",
+            method: metodo,
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(formulario)
         })
@@ -28,9 +32,10 @@ export default function Formulario() {
         } else {
             alert ("Erro! Os dados não foram salvos!")
         }
-        
 
     }
+
+    const textoBotao = userId ? "Editar" : "Cadastrar"
 
     return(
         <div>
@@ -39,7 +44,8 @@ export default function Formulario() {
                 type="text"
                 placeholder="Digite seu nome"
                 className="mb-4 w-60 p-1 focus:outline-none focus:ring-2 focus:ring-violet-500 outline-1 outline-black bg-white"
-                onChange={(e) => setNome(e.target.value)}>
+                onChange={(e) => setUserName(e.target.value)}
+                value={userName}>
             </input>
             
             <p className="font-bold">E-mail: </p>
@@ -47,7 +53,8 @@ export default function Formulario() {
                 type="email"
                 placeholder="Digite seu e-mail"
                 className="mb-4 w-60 p-1 focus:outline-none focus:ring-2 focus:ring-violet-500 outline-1 outline-black bg-white"
-                onChange={(e) => setEmail(e.target.value)}>
+                onChange={(e) => setEmail(e.target.value)}
+                value={userEmail}>
             </input>
 
             <br/>
@@ -55,7 +62,7 @@ export default function Formulario() {
             <button
                 className="bg-violet-500 p-2 mt-3 rounded-lg cursor-pointer border-1 border-black text-white hover:brightness-90 w-30"
                 onClick={Salvar}>
-                Salvar
+                {textoBotao}
             </button>
 
             <br/>

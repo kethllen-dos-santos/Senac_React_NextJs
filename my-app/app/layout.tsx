@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ItemMenu from "@/componentes/Aula4/ItemMenu";
 import Link from "next/link";
+import Botao from "@/componentes/Aula5/Botao";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,13 +46,16 @@ export default function RootLayout({
           </div>
 
         </div> */}
-        <div>
-          <Link href="/" className="cursor-pointer">
-            <h1 className="bg-gray-900 text-white p-5">Menu Inicial</h1>
+        <div className="flex flex-row items-center gap-10 p-5 bg-gray-900 text-white">
+          <Link href="/" className="cursor-pointer hover:text-violet-100">
+            <p className="text-xl font-bold">Menu Inicial</p>
+          </Link>
+          <Link href="/cadastro" className="hover:text-violet-500">
+          <h2 className="">Cadastrar</h2>
           </Link>
         </div>
 
-        <div className="bg-violet-300 p-5 h-screen">
+        <div className="bg-violet-300 p-5">
           {children}
         </div>
         

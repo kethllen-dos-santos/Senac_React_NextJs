@@ -1,5 +1,6 @@
 import Botao from "@/componentes/Aula5/Botao";
 import Link from "next/link";
+import Excluir from "./Excluir";
 
 export default async function Users() {
 
@@ -25,7 +26,7 @@ export default async function Users() {
                                     <Botao className="w-20 py-1 mb-3" cor="azul" titulo="Editar"/>
                                 </Link>
                                 <br/>
-                                <Botao className="w-20 py-1" cor="vermelho" titulo="Excluir"/>
+                                <Excluir id={item.id}/>
                             </div>
 
                         </div>

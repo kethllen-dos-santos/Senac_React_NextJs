@@ -229,7 +229,6 @@ export default function Index() {
 
 
 import Users from "@/componentes/Aula5/Users";
-import Link from "next/link";
 
 export default async function Index() {
 

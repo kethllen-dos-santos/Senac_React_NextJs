@@ -38,5 +38,14 @@ export async function PUT(request: Request, {params}: {params: {id: string}}) {
 
     await banco.query("UPDATE users SET name=?, email=? WHERE id=?", [name, email, id])
 
-    return new Response(JSON.stringify({valor: true}))
+    return new Response(JSON.stringify({valor: true})) // return Response.json({valor: true})
+}
+
+
+export async function DELETE(request: Request) {
+    const {id} = await request.json()
+
+    await banco.query("DELETE FROM users WHERE id=?", [id])
+
+    return new Response(JSON.stringify({valor: true})) // return Response.json({valor: true})
 }

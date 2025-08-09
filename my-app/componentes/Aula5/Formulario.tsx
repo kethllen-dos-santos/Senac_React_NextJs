@@ -1,7 +1,10 @@
 "use client"
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Swal from 'sweetalert2'
+
 
 export default function Formulario({id, name="", email=""}: userProps) {
 
@@ -9,6 +12,7 @@ export default function Formulario({id, name="", email=""}: userProps) {
     const [userName, setUserName] = useState(name)
     const [userEmail, setEmail] = useState(email)
     const rota = useRouter();
+    const Swal = require('sweetalert2')
 
     async function Salvar() {
         const formulario = {
@@ -26,11 +30,30 @@ export default function Formulario({id, name="", email=""}: userProps) {
         })
 
         const dados: userProps[] = await resposta.json();
+
+        if (metodo == "PUT") {
+            Swal.fire({
+                title: "Concluído",
+                text: "Os dados do usuário foi editado",
+                icon: "success"
+            });
+        } else {
+            Swal.fire({
+                title: "Concluído",
+                text: "O usuário foi cadastrado",
+                icon: "success"
+            });
+        }
+        
         
         if (dados) {
             rota.push("/")
         } else {
-            alert ("Erro! Os dados não foram salvos!")
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Algo deu errado!"
+            });
         }
 
     }
@@ -64,6 +87,15 @@ export default function Formulario({id, name="", email=""}: userProps) {
                 onClick={Salvar}>
                 {textoBotao}
             </button>
+
+            <br/>
+
+            <Link href={"/"}>
+                <button
+                    className="bg-gray-900 p-2 mt-5 rounded-lg cursor-pointer border-1 border-black text-white hover:brightness-90 w-30">
+                    Voltar
+                </button>
+            </Link>
 
             <br/>
 
